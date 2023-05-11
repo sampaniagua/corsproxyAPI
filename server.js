@@ -4,7 +4,8 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // This is your proxy middleware configuration.
 app.use('/sdapi', createProxyMiddleware({
